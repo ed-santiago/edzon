@@ -1,9 +1,17 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 6%;
 }
 
 header ul {
   display: flex;
   list-style-type: none;
+  gap: 5%;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: black;
 }
