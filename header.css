@@ -3,6 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1vw 10vw;
+  border-bottom: 2px solid black;
 }
 
 header ul {
@@ -40,12 +41,26 @@ form button {
   cursor: pointer;
 }
 
-#hamburger_menu {
+#header_icons {
+  display: flex;
+  gap: 10vw;
+  cursor: pointer;
+}
+
+#hamburger_menu, #search_icon {
   display: none;
 }
 
 @media screen and (max-width: 640px) {
-  header nav {
+  header {
+    padding: 2vw 5vw;
+  }
+
+  header nav, form {
     display: none;
+  }
+
+  #hamburger_menu, #search_icon {
+    display: block;
   }
 }
