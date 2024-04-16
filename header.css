@@ -23,7 +23,7 @@ header {
   font-size: 1.5rem;
 }
 
-form {
+/* form {
   display: flex;
   border: 1px solid var(--BLACK);
 }
@@ -40,15 +40,15 @@ form button {
   padding: 0.5vw;
   border: none;
   cursor: pointer;
-}
+} */
 
 #header_icons {
   display: flex;
-  gap: 10vw;
+  gap: 12vw;
   cursor: pointer;
 }
 
-#ham_icon, #search_icon {
+#ham_icon/* , #search_icon */ {
   display: none;
 }
 
@@ -95,11 +95,11 @@ form button {
     padding: 2vw 5vw;
   }
 
-  #menu_bar, form {
+  #menu_bar/* , form */ {
     display: none;
   }
 
-  #ham_icon, #search_icon {
+  #ham_icon/* , #search_icon */ {
     display: block;
   }
 }
