@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1vw 10vw;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--BLACK);
   flex-wrap: wrap;
 }
 
@@ -15,7 +15,7 @@ header {
 
 #menu_bar ul li a {
   text-decoration: none;
-  color: black;
+  color: var(--BLACK);
   font-size: 1.2rem;
 }
 
@@ -25,14 +25,14 @@ header {
 
 form {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid var(--BLACK);
 }
 
 #search {
   font-size: 1.2rem;
   padding: 0.5vw;
   border: none;
-  background-color: white;
+  background-color: var(--WHITE);
 }
 
 form button {
@@ -54,7 +54,7 @@ form button {
 
 #ham_menu_close_button {
   height: 38px;
-  color: white;
+  color: var(--WHITE);
   display: flex;
   justify-content: end;
   align-items: center;
@@ -70,7 +70,7 @@ form button {
   position: fixed;
   top: 0;
   right: -100vw;
-  background-color: black;
+  background-color: var(--BLACK);
   padding: 2vw 5vw;
   transition: .3s;
 }
@@ -87,7 +87,7 @@ form button {
 .ham_menu ul li a {
   text-decoration: none;
   font-size: 1.6rem;
-  color: white;
+  color: var(--WHITE);
 }
 
 @media screen and (max-width: 640px) {

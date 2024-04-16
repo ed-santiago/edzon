@@ -9,3 +9,8 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+:root {
+  --BLACK: black;
+  --WHITE: white;
+}
