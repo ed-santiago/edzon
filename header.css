@@ -4,15 +4,16 @@ header {
   align-items: center;
   padding: 1vw 10vw;
   border-bottom: 2px solid black;
+  flex-wrap: wrap;
 }
 
-header ul {
+#menu_bar ul {
   display: flex;
   list-style-type: none;
   gap: 2vw;
 }
 
-header ul li a {
+#menu_bar ul li a {
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
@@ -47,8 +48,46 @@ form button {
   cursor: pointer;
 }
 
-#hamburger_menu, #search_icon {
+#ham_icon, #search_icon {
   display: none;
+}
+
+#ham_menu_close_button {
+  height: 38px;
+  color: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.fa-xmark {
+  font-size: 2rem;
+}
+
+.ham_menu {
+  height: 100vh;
+  width: 85%;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  background-color: black;
+  padding: 2vw 5vw;
+  transition: .3s;
+}
+
+.ham_menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 4vh;
+  padding: 12vh 0;
+}
+
+.ham_menu ul li a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: white;
 }
 
 @media screen and (max-width: 640px) {
@@ -56,11 +95,11 @@ form button {
     padding: 2vw 5vw;
   }
 
-  header nav, form {
+  #menu_bar, form {
     display: none;
   }
 
-  #hamburger_menu, #search_icon {
+  #ham_icon, #search_icon {
     display: block;
   }
 }
