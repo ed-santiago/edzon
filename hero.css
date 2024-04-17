@@ -32,4 +32,11 @@
   height: 0.5rem;
   border-radius: 50%;
   background-color: var(--WHITE);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 640px) {
+  #slider_nav {
+    gap: 8vw;
+  }
 }
