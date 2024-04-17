@@ -15,10 +15,18 @@ hamMenuCloseButtont.addEventListener("click", () => {
 /* HERO SECTION */
 
 const imgList = document.querySelectorAll("#slider img");
+const sliderNavList = document.querySelectorAll("#slider_nav a");
 
 let imgListIndex = 0;
 const interval = setInterval(() => {
   imgList[imgListIndex].scrollIntoView();
+  sliderNavList.forEach((element, index) => {
+    if (imgListIndex === index) {
+      element.style.scale = "1.8";
+    } else {
+      element.style.scale = "1";
+    }
+  })
   imgListIndex += 1;
   if (imgListIndex >= imgList.length) {
     imgListIndex = 0;
