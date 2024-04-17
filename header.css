@@ -68,6 +68,7 @@ form button {
   height: 100vh;
   width: 85%;
   position: fixed;
+  z-index: 2;
   top: 0;
   right: -100vw;
   background-color: var(--BLACK);
