@@ -1,0 +1,35 @@
+#slider_container {
+  position: relative;
+}
+
+#slider {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  min-height: 700px;
+  max-height: 700px
+}
+
+#slider img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+#slider_nav {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 2vw;
+  position: absolute;
+  bottom: 2vh;
+  z-index: 1;
+}
+
+#slider_nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--WHITE);
+}
