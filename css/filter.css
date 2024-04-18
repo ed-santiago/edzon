@@ -1,0 +1,49 @@
+#filter_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8vh 12vw;
+}
+
+#filter_section h1 {
+  font-size: 4rem;
+}
+
+#form_search {
+  display: flex;
+  border: 1px solid var(--BLACK);
+}
+
+#form_search input {
+  font-size: 1.2rem;
+  padding: 0.5vw;
+  border: none;
+  background-color: var(--WHITE);
+  outline: none;
+}
+
+#form_search input:focus {
+  border: none;
+}
+
+#form_search button {
+  font-size: 1.2rem;
+  padding: 0.5vw;
+  border: none;
+  cursor: pointer;
+}
+
+#form_filter {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  font-size: 1.2rem;
+  padding: 0.5vw;
+}
+
+#form_filter select {
+  font-size: 1.2rem;
+  padding: 0.5vw;
+  border-radius: 0;
+  outline: none;
+}

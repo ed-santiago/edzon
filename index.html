@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/filter.css">
   <script src="javascript/headerAndHero.js" defer></script>
   <script src="javascript/main.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -50,59 +51,61 @@
     </ul>
   </nav>
 
-  <section id="hero_section">
-    <div id="slider_container">
-      <div id="slider">
-        <div id="slide_1" class="background_image" style="background-image: url('images/clothes.jpg');">
-          <div>
-            <p class="slide_p">up to</p>
-            <h1 class="slide_h1">35% OFF</h1>
-            <p class="slide_p">on selected clothes</p>
-            <button class="slide_button">SHOP NOW!</button>
-          </div>
-        </div>
-        <div id="slide_2" class="background_image" style="background-image: url('images/jewellery.jpg');">
-          <div>
-            <p class="slide_p">up to</p>
-            <h1 class="slide_h1">20% OFF</h1>
-            <p class="slide_p">on selected jewellery</p>
-            <button class="slide_button">SHOP NOW!</button>
-          </div>
-        </div>
-        <div id="slide_3" class="background_image" style="background-image: url('images/monitor.jpg');">
-          <div>
-            <p class="slide_p">NEW ARRIVAL!</p>
-            <p class="slide_p">check out the new</p>
-            <h1 class="slide_h1">Monitor</h1>
-            <button class="slide_button">CHECK IT OUT!</button>
-          </div>
-        </div>
-      </div>
-      <div id="slider_nav">
-        <a href="#slide_1"></a>
-        <a href="#slide_2"></a>
-        <a href="#slide_3"></a>
-      </div>
-    </div>
-  </section>
-
   <main>
-    <div id="filter">
+
+    <section id="hero_section">
+      <div id="slider_container">
+        <div id="slider">
+          <div id="slide_1" class="background_image" style="background-image: url('images/clothes.jpg');">
+            <div>
+              <p class="slide_p">up to</p>
+              <h1 class="slide_h1">35% OFF</h1>
+              <p class="slide_p">on selected clothes</p>
+              <button class="slide_button">SHOP NOW!</button>
+            </div>
+          </div>
+          <div id="slide_2" class="background_image" style="background-image: url('images/jewellery.jpg');">
+            <div>
+              <p class="slide_p">up to</p>
+              <h1 class="slide_h1">20% OFF</h1>
+              <p class="slide_p">on selected jewellery</p>
+              <button class="slide_button">SHOP NOW!</button>
+            </div>
+          </div>
+          <div id="slide_3" class="background_image" style="background-image: url('images/monitor.jpg');">
+            <div>
+              <p class="slide_p">NEW ARRIVAL!</p>
+              <p class="slide_p">check out the new</p>
+              <h1 class="slide_h1">Monitor</h1>
+              <button class="slide_button">CHECK IT OUT!</button>
+            </div>
+          </div>
+        </div>
+        <div id="slider_nav">
+          <a href="#slide_1"></a>
+          <a href="#slide_2"></a>
+          <a href="#slide_3"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="filter_section">
       <h1>All</h1>
-      <form>
-        <input id="search" type="text" placeholder="Search Product">
+      <form id="form_search">
+        <input type="text" placeholder="Search Product">
         <button type="submit">Search</button>
       </form>
-      <form id="filter">
-        <label for="filter_products"></label>
-        <select id="filter_products">
+      <form id="form_filter">
+        <label for="select">Sort By</label>
+        <select id="select">
           <option value="all">All</option>
           <option value="low_to_high">Price: Low to high</option>
           <option value="high_to_low">Price: High to low</option>
           <option value="sale">On Sale</option>
         </select>
       </form>
-    </div>
+    </section>
+
   </main>
 
 </body>

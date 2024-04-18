@@ -23,32 +23,13 @@ header {
   font-size: 1.5rem;
 }
 
-/* form {
-  display: flex;
-  border: 1px solid var(--BLACK);
-}
-
-#search {
-  font-size: 1.2rem;
-  padding: 0.5vw;
-  border: none;
-  background-color: var(--WHITE);
-}
-
-form button {
-  font-size: 1.2rem;
-  padding: 0.5vw;
-  border: none;
-  cursor: pointer;
-} */
-
 #header_icons {
   display: flex;
   gap: 12vw;
   cursor: pointer;
 }
 
-#ham_icon/* , #search_icon */ {
+#ham_icon {
   display: none;
 }
 
