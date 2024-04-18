@@ -92,4 +92,12 @@
   #slider_nav {
     gap: 8vw;
   }
+
+  #slide_1 div, #slide_2 div, #slide_3 div {
+    align-content: center;
+  }
+
+  .slide_h1 {
+    font-size: 4rem;
+  }
 }
