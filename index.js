@@ -16,19 +16,27 @@ hamMenuCloseButtont.addEventListener("click", () => {
 
 const imgList = document.querySelectorAll("#slider img");
 const sliderNavList = document.querySelectorAll("#slider_nav a");
+const sliderNavArray = Array.from(sliderNavList)
+
+function changeSliderNavScale() {
+  sliderNavArray.forEach((nav, index) => {
+    imgListIndex === index ? nav.style.scale = "1.8" : nav.style.scale = "1";
+  })
+}
 
 let imgListIndex = 0;
 const interval = setInterval(() => {
   imgList[imgListIndex].scrollIntoView();
-  sliderNavList.forEach((element, index) => {
-    if (imgListIndex === index) {
-      element.style.scale = "1.8";
-    } else {
-      element.style.scale = "1";
-    }
-  })
+  changeSliderNavScale();
   imgListIndex += 1;
   if (imgListIndex >= imgList.length) {
     imgListIndex = 0;
   }
-}, 3000);
+}, 5000);
+
+sliderNavArray.forEach((nav) => {
+  nav.addEventListener("click", () => {
+    nav.style.scale = "1.8";
+    sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
+  })
+})
