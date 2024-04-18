@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 8vh 12vw;
 }
 
@@ -10,7 +11,6 @@
 }
 
 #form_search {
-  display: flex;
   border: 1px solid var(--BLACK);
 }
 
@@ -35,10 +35,9 @@
 
 #form_filter {
   display: flex;
-  align-items: center;
   gap: 1vw;
+  align-items: center;
   font-size: 1.2rem;
-  padding: 0.5vw;
 }
 
 #form_filter select {
@@ -46,4 +45,41 @@
   padding: 0.5vw;
   border-radius: 0;
   outline: none;
+}
+
+@media screen and (max-width: 640px) {
+  #filter_section {
+    padding: 5vh 6vw;
+    gap: 4vh;
+  }
+
+  #filter_section h1 {
+    font-size: 3rem;
+  }
+
+  #form_search {
+    order: 3;
+    margin: auto;
+  }
+
+  #form_search input {
+    font-size: 1.5rem;
+    padding: 2vw;
+  }
+  
+  #form_search button {
+    font-size: 1.5rem;
+    padding: 2vw;
+  }
+
+  #form_filter {
+    flex-direction: column;
+    gap: 1vh;
+    align-items: start;
+    font-size: 1.3rem;
+  }
+
+  #form_filter select {
+    font-size: 1.3rem;
+  }
 }

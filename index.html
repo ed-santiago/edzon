@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/filter.css">
   <script src="javascript/headerAndHero.js" defer></script>
-  <script src="javascript/main.js" defer></script>
+  <script src="javascript/filter.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -92,15 +92,15 @@
     <section id="filter_section">
       <h1>All</h1>
       <form id="form_search">
-        <input type="text" placeholder="Search Product">
+        <input id="search_value" type="text" placeholder="Search Product">
         <button type="submit">Search</button>
       </form>
       <form id="form_filter">
         <label for="select">Sort By</label>
         <select id="select">
           <option value="all">All</option>
-          <option value="low_to_high">Price: Low to high</option>
-          <option value="high_to_low">Price: High to low</option>
+          <option value="low_to_high">Low to high</option>
+          <option value="high_to_low">High to low</option>
           <option value="sale">On Sale</option>
         </select>
       </form>
