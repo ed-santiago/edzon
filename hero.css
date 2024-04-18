@@ -11,10 +11,20 @@
   max-height: 700px
 }
 
-#slider img {
-  width: 100%;
-  object-fit: cover;
+.background_image {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
   opacity: 0.8;
+}
+
+#slide_1 div, #slide_3 div {
+  display: flex;
+  flex-direction: column;
+  align-content: end;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10vh 10vw;
 }
 
 #slider_nav {
