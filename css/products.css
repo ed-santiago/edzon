@@ -1,3 +1,9 @@
-#products {
+#product_section {
   padding: 0 15vw;
+  display: grid;
+  grid-template-columns: (4, 1fr);
+}
+
+#product_section img {
+  max-width: 100%;
 }
