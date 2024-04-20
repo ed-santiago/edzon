@@ -5,6 +5,7 @@
 #slider {
   display: flex;
   overflow-x: hidden;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   max-width: 100%;
   min-height: 700px;
@@ -15,6 +16,7 @@
   min-width: 100%;
   background-size: cover;
   background-position: center;
+  scroll-snap-align: start;
 }
 
 #slider {

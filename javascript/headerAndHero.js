@@ -14,21 +14,29 @@ hamMenuCloseButtont.addEventListener("click", () => {
 
 /* HERO SECTION */
 
-const divList = document.querySelectorAll(".background_image");
+const slider = document.querySelector("#slider");
 const sliderNavList = document.querySelectorAll("#slider_nav a");
 const sliderNavArray = Array.from(sliderNavList)
 
-let divIndex = 0;
-const interval = setInterval(() => {
-  divList[divIndex].scrollIntoView();
-  sliderNavArray.forEach((nav, index) => {
-    divIndex === index ? nav.style.scale = "1.8" : nav.style.scale = "1";
-  })
-  divIndex += 1;
-  if (divIndex >= divList.length) {
-    divIndex = 0;
+let counter = 1;
+const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+function automateSlider() {
+  slider.scrollBy(100, 0);
+  if (slider.scrollLeft === maxScrollLeft) {
+    slider.scrollTo(0, 0);
   }
-}, 6000);
+
+  sliderNavArray.forEach((nav, index) => {
+    counter === index ? nav.style.scale = "1.8" : nav.style.scale = "1";
+  })
+  counter += 1;
+  if (counter >= sliderNavArray.length) {
+    counter = 0;
+  }
+}
+
+const intervalId = setInterval(automateSlider, 5000);
 
 sliderNavArray.forEach((nav) => {
   nav.addEventListener("click", () => {
