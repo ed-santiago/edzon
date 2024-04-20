@@ -19,7 +19,7 @@ header {
   font-size: 1.2rem;
 }
 
-.fa-solid {
+#header_icons .fa-solid {
   font-size: 1.5rem;
 }
 
@@ -41,7 +41,7 @@ header {
   align-items: center;
 }
 
-.fa-xmark {
+.ham_menu .fa-xmark {
   font-size: 2rem;
 }
 

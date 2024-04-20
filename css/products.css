@@ -5,16 +5,16 @@
   gap: 1vw;
 }
 
-#product_section div {
+#product_card {
   padding: 1vw;
   background-color: whitesmoke;
 }
 
-#product_section div > * {
+#product_card * {
   margin-bottom: 0.9vh;
 }
 
-#product_section div img {
+#product_card img {
   width: 100%;
   aspect-ratio: 1 /1 ;
   object-fit: contain;
@@ -25,11 +25,17 @@
   color: grey;
 }
 
-#product_section div h2 {
+#product_card h2 {
   font-size: 1.3rem;
 }
 
-.fa-star {
+#starPriceCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#star_and_price .fa-star {
   font-size: 0.8rem;
   color: gold;
 }
@@ -37,4 +43,9 @@
 .price {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+#starPriceCart .fa-cart-shopping {
+  font-size: 1.4rem;
+  cursor: pointer;
 }
