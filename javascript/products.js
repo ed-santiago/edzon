@@ -12,10 +12,10 @@ function renderProduct(product) {
   const productDiv = document.createElement("div");
   productDiv.innerHTML = `
     <img src=${product.image} alt="idk">
-    <p>${product.category}</p>
+    <p class="category">${product.category}</p>
     <h2>${product.title}</h2>
     <p>${starRating(product.rating)}</p>
-    <p>${product.price}</p>
+    <p class="price">${product.price}</p>
   `
   productSection.append(productDiv);
 }

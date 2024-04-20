@@ -10,8 +10,31 @@
   background-color: whitesmoke;
 }
 
+#product_section div > * {
+  margin-bottom: 0.9vh;
+}
+
 #product_section div img {
   width: 100%;
   aspect-ratio: 1 /1 ;
   object-fit: contain;
+}
+
+.category {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+#product_section div h2 {
+  font-size: 1.3rem;
+}
+
+.fa-star {
+  font-size: 0.8rem;
+  color: gold;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
