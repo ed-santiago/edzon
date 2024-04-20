@@ -1,9 +1,17 @@
 #product_section {
   padding: 0 15vw;
   display: grid;
-  grid-template-columns: (4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1vw;
 }
 
-#product_section img {
-  max-width: 100%;
+#product_section div {
+  padding: 1vw;
+  background-color: whitesmoke;
+}
+
+#product_section div img {
+  width: 100%;
+  aspect-ratio: 1 /1 ;
+  object-fit: contain;
 }

@@ -9,9 +9,9 @@ function renderProducts(products) {
 }
 
 function renderProduct(product) {
-  productSection.innerHTML = `
-    <figure>
-      <img src="${product.image}" alt="idk">
-    </figure>
+  const productDiv = document.createElement("div");
+  productDiv.innerHTML = `
+    <img src=${product.image} alt="idk">
   `
+  productSection.append(productDiv);
 }
