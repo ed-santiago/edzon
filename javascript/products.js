@@ -14,8 +14,20 @@ function renderProduct(product) {
     <img src=${product.image} alt="idk">
     <p>${product.category}</p>
     <h2>${product.title}</h2>
-    <p>${product.rating}</p>
+    <p>${starRating(product.rating)}</p>
     <p>${product.price}</p>
   `
   productSection.append(productDiv);
+}
+
+//star rating for product cards
+
+function starRating(rating) {
+  let ratingStar = "";
+
+  for (let i = 1; i <= rating; i++) {
+    ratingStar += `<i class="fa-solid fa-star"></i>`
+  }
+
+  return ratingStar;
 }
