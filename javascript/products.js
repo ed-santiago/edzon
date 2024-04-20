@@ -10,13 +10,13 @@ function renderProducts(products) {
 
 function renderProduct(product) {
   const productDiv = document.createElement("div");
-  productDiv.id = "product_card";
+  productDiv.classList.add("product_card");
   productDiv.innerHTML = `
     <img src=${product.image} alt="idk">
     <p class="category">${product.category}</p>
     <h2>${product.title}</h2>
-    <div id=starPriceCart>
-      <div id="star_and_price">
+    <div class=starPriceCart>
+      <div class="star_and_price">
         ${starRating(product.rating)}
         <p class="price">$${product.price}</p>
       </div>

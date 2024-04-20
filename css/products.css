@@ -5,16 +5,16 @@
   gap: 1vw;
 }
 
-#product_card {
+.product_card {
   padding: 1vw;
   background-color: whitesmoke;
 }
 
-#product_card * {
+.product_card * {
   margin-bottom: 0.9vh;
 }
 
-#product_card img {
+.product_card img {
   width: 100%;
   aspect-ratio: 1 /1 ;
   object-fit: contain;
@@ -25,17 +25,17 @@
   color: grey;
 }
 
-#product_card h2 {
+.product_card h2 {
   font-size: 1.3rem;
 }
 
-#starPriceCart {
+.starPriceCart {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#star_and_price .fa-star {
+.star_and_price .fa-star {
   font-size: 0.8rem;
   color: gold;
 }
@@ -45,7 +45,7 @@
   font-weight: 600;
 }
 
-#starPriceCart .fa-cart-shopping {
+.starPriceCart .fa-cart-shopping {
   font-size: 1.4rem;
   cursor: pointer;
 }
