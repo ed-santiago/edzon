@@ -33,12 +33,13 @@ function automateSlider() {
       counter = index;
       nav.style.scale = "1.8";
       sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
-      counter += 1;
-      if (counter >= sliderNavArray.length) {
-        counter = 0;
-      }
+      increaseCounter();
     })
   })
+  increaseCounter();
+}
+
+function increaseCounter() {
   counter += 1;
   if (counter >= sliderNavArray.length) {
     counter = 0;
