@@ -1,4 +1,6 @@
-/* HEADER NAVBAR */
+/* NAVBAR */
+
+/* HAMBUGER MENU */
 
 const hamIcon = document.querySelector("#ham_icon");
 const hamMenuCloseButtont = document.querySelector(".fa-xmark");
