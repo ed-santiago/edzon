@@ -29,6 +29,15 @@ function automateSlider() {
 
   sliderNavArray.forEach((nav, index) => {
     counter === index ? nav.style.scale = "1.8" : nav.style.scale = "1";
+    nav.addEventListener("click", () => {
+      counter = index;
+      nav.style.scale = "1.8";
+      sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
+      counter += 1;
+      if (counter >= sliderNavArray.length) {
+        counter = 0;
+      }
+    })
   })
   counter += 1;
   if (counter >= sliderNavArray.length) {
@@ -37,10 +46,3 @@ function automateSlider() {
 }
 
 const intervalId = setInterval(automateSlider, 5000);
-
-sliderNavArray.forEach((nav) => {
-  nav.addEventListener("click", () => {
-    nav.style.scale = "1.8";
-    sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
-  })
-})
