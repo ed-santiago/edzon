@@ -13,7 +13,7 @@ fetch("https://edzon-db.onrender.com/products")
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
-  const filteredProducts = productsArray.filter(product => {
+  const filteredProducts = [...productsArray].filter(product => {
     return product.title.toLowerCase().includes(searchValue) ||
       product.category.toLowerCase().includes(searchValue)
   })
@@ -28,13 +28,20 @@ searchForm.addEventListener("submit", (e) => {
 formSort.addEventListener("change", (e) => {
   switch (e.target.value) {
     case "all":
+      sortFilteredProducts = [];
       renderProducts(productsArray);
       break;
-    case "low_to_high":
-      renderProducts(lowToHigh());
+    case "lowest_price":
+      renderProducts(lowestPrice());
       break;
-    case "high_to_low":
-      renderProducts(highToLow());
+    case "highest_price":
+      renderProducts(highestPrice());
+      break;
+    case "lowest_rating":
+      renderProducts(lowestRating());
+      break;
+    case "highest_rating":
+      renderProducts(highestRating());
       break;
     case "sale":
       console.log("sale");
@@ -42,7 +49,7 @@ formSort.addEventListener("change", (e) => {
   }
 })
 
-function lowToHigh() {
+function lowestPrice() {
   if (sortFilteredProducts.length === 0) {
     return productsArray.sort((a, b) => a.price - b.price)
   } else {
@@ -50,11 +57,27 @@ function lowToHigh() {
   }
 }
 
-function highToLow() {
+function highestPrice() {
   if (sortFilteredProducts.length === 0) {
     return productsArray.sort((a, b) => b.price - a.price)
   } else {
     return sortFilteredProducts.sort((a, b) => b.price - a.price)
+  }
+}
+
+function lowestRating() {
+  if (sortFilteredProducts.length === 0) {
+    return productsArray.sort((a, b) => a.rating - b.rating)
+  } else {
+    return sortFilteredProducts.sort((a, b) => a.rating - b.rating)
+  }
+}
+
+function highestRating() {
+  if (sortFilteredProducts.length === 0) {
+    return productsArray.sort((a, b) => b.rating - a.rating)
+  } else {
+    return sortFilteredProducts.sort((a, b) => b.rating - a.rating)
   }
 }
 
