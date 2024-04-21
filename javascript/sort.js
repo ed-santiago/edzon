@@ -3,17 +3,8 @@
 const searchForm = document.querySelector("#form_search");
 const searchBar = document.querySelector("#search_value");
 const formSort = document.querySelector("#form_sort");
-let productsArray = [];
-let copyOfProductsArray = [];
 
 let sortFilteredProducts = [];
-
-fetch("https://edzon-db.onrender.com/products")
-  .then(res => res.json())
-  .then(products => {
-    productsArray = products
-    copyOfProductsArray = [...productsArray]
-  });
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -50,7 +41,7 @@ formSort.addEventListener("change", (e) => {
 
 function lowestPrice() {
   if (sortFilteredProducts.length === 0) {
-    return productsArray.sort((a, b) => a.price - b.price)
+    return copyOfProductsArray.sort((a, b) => a.price - b.price)
   } else {
     return sortFilteredProducts.sort((a, b) => a.price - b.price)
   }
@@ -58,7 +49,7 @@ function lowestPrice() {
 
 function highestPrice() {
   if (sortFilteredProducts.length === 0) {
-    return productsArray.sort((a, b) => b.price - a.price)
+    return copyOfProductsArray.sort((a, b) => b.price - a.price)
   } else {
     return sortFilteredProducts.sort((a, b) => b.price - a.price)
   }
