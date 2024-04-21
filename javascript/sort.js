@@ -42,12 +42,6 @@ formSort.addEventListener("change", (e) => {
     case "highest_price":
       renderProducts(highestPrice());
       break;
-    case "lowest_rating":
-      renderProducts(lowestRating());
-      break;
-    case "highest_rating":
-      renderProducts(highestRating());
-      break;
     case "sale":
       console.log("sale");
       break;
@@ -69,24 +63,3 @@ function highestPrice() {
     return sortFilteredProducts.sort((a, b) => b.price - a.price)
   }
 }
-
-function lowestRating() {
-  if (sortFilteredProducts.length === 0) {
-    return productsArray.sort((a, b) => a.rating - b.rating)
-  } else {
-    return sortFilteredProducts.sort((a, b) => a.rating - b.rating)
-  }
-}
-
-function highestRating() {
-  if (sortFilteredProducts.length === 0) {
-    return productsArray.sort((a, b) => b.rating - a.rating)
-  } else {
-    return sortFilteredProducts.sort((a, b) => b.rating - a.rating)
-  }
-}
-
-/* return products.sort((a, b) => {
-  return a.price - b.price;
-}) */
-/* console.log(e.target.value) */
