@@ -1,10 +1,11 @@
+const productSection = document.querySelector("#product_section");
+
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
   .then(products => renderProducts(products));
 
-const productSection = document.querySelector("#product_section");
-
 function renderProducts(products) {
+  productSection.innerHTML = "";
   products.forEach(product => renderProduct(product));
 }
 
@@ -12,7 +13,7 @@ function renderProduct(product) {
   const productDiv = document.createElement("div");
   productDiv.classList.add("product_card");
   productDiv.innerHTML = `
-    <img src=${product.image} alt="idk">
+    <img src="${product.image}" alt="${product.title}">
     <p class="category">${product.category}</p>
     <h2>${product.title}</h2>
     <div class=starPriceCart>

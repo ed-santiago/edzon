@@ -1,4 +1,4 @@
-#filter_section {
+#sort_section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,7 +6,7 @@
   padding: 8vh 12vw;
 }
 
-#filter_section h1 {
+#sort_section h1 {
   font-size: 4rem;
 }
 
@@ -33,14 +33,14 @@
   cursor: pointer;
 }
 
-#form_filter {
+#form_sort {
   display: flex;
   gap: 1vw;
   align-items: center;
   font-size: 1.2rem;
 }
 
-#form_filter select {
+#form_sort select {
   font-size: 1.2rem;
   padding: 0.5vw;
   border-radius: 0;
@@ -48,12 +48,12 @@
 }
 
 @media screen and (max-width: 640px) {
-  #filter_section {
+  #sort_section {
     padding: 5vh 6vw;
     gap: 4vh;
   }
 
-  #filter_section h1 {
+  #sort_section h1 {
     font-size: 3rem;
   }
 
@@ -72,14 +72,14 @@
     padding: 2vw;
   }
 
-  #form_filter {
+  #form_sort {
     flex-direction: column;
     gap: 1vh;
     align-items: start;
     font-size: 1.3rem;
   }
 
-  #form_filter select {
+  #form_sort select {
     font-size: 1.3rem;
   }
 }
