@@ -4,16 +4,21 @@ const searchForm = document.querySelector("#form_search");
 const searchBar = document.querySelector("#search_value");
 const formSort = document.querySelector("#form_sort");
 let productsArray = [];
+let copyOfProductsArray = [];
+
 let sortFilteredProducts = [];
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => productsArray = products);
+  .then(products => {
+    productsArray = products
+    copyOfProductsArray = [...productsArray]
+  });
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
-  const filteredProducts = [...productsArray].filter(product => {
+  const filteredProducts = copyOfProductsArray.filter(product => {
     return product.title.toLowerCase().includes(searchValue) ||
       product.category.toLowerCase().includes(searchValue)
   })
