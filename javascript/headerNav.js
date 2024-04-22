@@ -1,15 +1,17 @@
 /* NAVBAR */
-let productsForNav = [];
 const filterTitle = document.querySelector("#sort_section h1");
+
+let productsArray = [];
+let filteredProducts = [];
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => productsForNav = products);
+  .then(products => productsArray = products);
 
 //Show all products
 const allNav = document.querySelector(".nav_all");
 allNav.addEventListener("click", () => {
-  renderProducts(productsForNav);
+  renderProducts(productsArray);
 })
 
 //Mens filter
@@ -30,18 +32,20 @@ jewelleryNav.addEventListener("click", () => {
   productsFilter("Jewellery");
 })
 
+//Electronic filter
 const electronicNav = document.querySelector(".nav_electronics");
 electronicNav.addEventListener("click", () => {
   productsFilter("Electronics");
 })
 
-/* FILTER PRODUCT BY CATEGORY */
+//FILTER PRODUCT BY CATEGORY
 function productsFilter(category) {
   filterTitle.textContent = category;
-  const categoryFilter = [...productsForNav].filter(product => {
+  filteredProducts = productsArray.filter(product => {
     return product.category === category;
   })
-  renderProducts(categoryFilter);
+  renderProducts(filteredProducts);
+  formSort.reset();
 }
 
 /* HAMBUGER MENU */
