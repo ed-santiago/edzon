@@ -3,6 +3,15 @@
 const searchForm = document.querySelector("#form_search");
 const searchBar = document.querySelector("#search_value");
 const formSort = document.querySelector("#form_sort");
+let productsArray = [];
+let copyOfProductsArray = [];
+
+fetch("https://edzon-db.onrender.com/products")
+  .then(res => res.json())
+  .then(products => {
+    productsArray = products
+    copyOfProductsArray = [...productsArray]
+  });
 
 let sortFilteredProducts = [];
 

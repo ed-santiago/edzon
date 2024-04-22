@@ -1,28 +1,48 @@
 /* NAVBAR */
-let productsArray = [];
-let copyOfProductsArray = [];
+let productsForNav = [];
+const filterTitle = document.querySelector("#sort_section h1");
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => {
-    productsArray = products
-    copyOfProductsArray = [...productsArray]
-  });
+  .then(products => productsForNav = products);
 
-  /* FILTER PRODUCT BY CATEGORY */
-  function productsFilter(title, category) {
-    productSectionH1.textContent = title
-    productSection.innerHTML = ''
-    fetch(productAPI)
-      .then(res => res.json())
-      .then(products => {
-        products.forEach(product => {
-          if (product.category === category) {
-            renderProduct(product)
-          }
-        })
-      })
-  }
+//Show all products
+const allNav = document.querySelector(".nav_all");
+allNav.addEventListener("click", () => {
+  renderProducts(productsForNav);
+})
+
+//Mens filter
+const menNav = document.querySelector(".nav_men");
+menNav.addEventListener("click", () => {
+  productsFilter("Men's clothing");
+})
+
+//Womens filter
+const womenNav = document.querySelector(".nav_women");
+womenNav.addEventListener("click", () => {
+  productsFilter("Women's clothing");
+})
+
+//Jewellery filter
+const jewelleryNav = document.querySelector(".nav_jewellery");
+jewelleryNav.addEventListener("click", () => {
+  productsFilter("Jewellery");
+})
+
+const electronicNav = document.querySelector(".nav_electronics");
+electronicNav.addEventListener("click", () => {
+  productsFilter("Electronics");
+})
+
+/* FILTER PRODUCT BY CATEGORY */
+function productsFilter(category) {
+  filterTitle.textContent = category;
+  const categoryFilter = [...productsForNav].filter(product => {
+    return product.category === category;
+  })
+  renderProducts(categoryFilter);
+}
 
 /* HAMBUGER MENU */
 
