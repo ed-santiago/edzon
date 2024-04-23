@@ -10,6 +10,10 @@
   background-color: whitesmoke;
 }
 
+.product_card:hover img {
+  scale: 1.1;
+}
+
 .product_card * {
   margin-bottom: 0.9vh;
 }
@@ -18,6 +22,8 @@
   width: 100%;
   aspect-ratio: 1 /1 ;
   object-fit: contain;
+  margin-bottom: 2vh;
+  transition: 0.3s;
 }
 
 .category {
@@ -33,6 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .star_and_price .fa-star {
@@ -45,10 +52,12 @@
   gap: 2vw;
   font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 .price p {
   padding: 0.5vh;
+  margin-bottom: 0;
 }
 
 .sale_price {
@@ -59,4 +68,9 @@
 .starPriceCart .fa-cart-shopping {
   font-size: 1.8rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.starPriceCart .fa-cart-shopping:hover {
+  scale: 1.1;
 }

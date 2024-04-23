@@ -38,6 +38,11 @@ header {
 
 #header_icons .fa-solid {
   font-size: 1.5rem;
+  transition: 0.2s;
+}
+
+#header_icons .fa-solid:hover {
+  scale: 1.1;
 }
 
 #header_icons {
