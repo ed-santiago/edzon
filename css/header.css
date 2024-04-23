@@ -10,7 +10,7 @@ header {
 #menu_bar ul {
   display: flex;
   list-style-type: none;
-  gap: 2vw;
+  gap: 3vw;
 }
 
 #menu_bar ul li a {
@@ -37,8 +37,7 @@ header {
 }
 
 #header_icons .fa-solid {
-  font-size: 1.5rem;
-  transition: 0.2s;
+  font-size: 1.7rem;
 }
 
 #header_icons .fa-solid:hover {
