@@ -8,8 +8,8 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchBar.value.toLowerCase();
   filteredProducts = productsArray.filter(product => {
-    return product.title.toLowerCase().includes(searchValue) ||
-      product.category.toLowerCase().includes(searchValue)
+    return product.title.toLowerCase().startsWith(searchValue) ||
+      product.category.toLowerCase().startsWith(searchValue)
   })
   renderProducts(filteredProducts);
   searchForm.reset();
