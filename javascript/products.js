@@ -19,7 +19,9 @@ function renderProduct(product) {
     <div class=starPriceCart>
       <div class="star_and_price">
         ${starRating(product.rating)}
-        <p class="price">$${product.price}</p>
+        <div class="price">
+        ${displayPrice(product)}
+        </div>
       </div>
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
@@ -37,4 +39,19 @@ function starRating(rating) {
   }
 
   return ratingStar;
+}
+
+//Display price
+
+function displayPrice(product) {
+  const price = product.price;
+
+  if (price.salePrice > 0) {
+    return `
+      <p><del>$${price.originalPrice}</del></p>
+      <p class="sale_price">$${price.salePrice}</p>
+    `
+  } else {
+    return `<p>$${price.originalPrice}</p>`
+  }
 }

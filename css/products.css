@@ -41,11 +41,22 @@
 }
 
 .price {
-  font-size: 1.1rem;
+  display: flex;
+  gap: 2vw;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
+.price p {
+  padding: 0.5vh;
+}
+
+.sale_price {
+  background-color: rgb(180, 0, 0);
+  color: var(--WHITE);
+}
+
 .starPriceCart .fa-cart-shopping {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   cursor: pointer;
 }
