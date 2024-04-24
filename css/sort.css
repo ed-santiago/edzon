@@ -4,6 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 8vh 12vw;
+  scroll-margin-top: 5vh;
 }
 
 #sort_section h1 {
@@ -52,8 +53,8 @@
 
 @media screen and (max-width: 640px) {
   #sort_section {
-    padding: 2vh 5vw;
-    gap: 2vh;
+    padding: 3vh 5vw;
+    gap: 3vh;
   }
 
   #sort_section h1 {
