@@ -1,17 +1,24 @@
 #product_dialog {
+  margin: auto;
+  padding: 1vw;
+  min-width: 60vw; max-width: 60vw;
+  min-height: 70vh; max-height: 70vh;
+}
+
+#product_info {
   display: flex;
 }
 
-#product_dialog figure {
+#product_info figure {
   width: 50%;
 }
 
-#product_dialog img {
+#product_info img {
   width: 100%;
-  height: 70%;
+  aspect-ratio: 1 /1 ;
   object-fit: contain;
 }
 
-#product_dialog div {
+#product_info div {
   width: 50%;
 }

@@ -1,5 +1,6 @@
 const productSection = document.querySelector("#product_section");
 const productDialog = document.querySelector("#product_dialog");
+const productInfo = document.querySelector("#product_info");
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
@@ -30,7 +31,7 @@ function renderProduct(product) {
   productSection.append(productDiv);
   productDiv.addEventListener("click", () => {
     productDialog.showModal();
-    productDialog.innerHTML = `
+    productInfo.innerHTML = `
       <figure>
         <img src="${product.image}" alt="${product.title}">
       </figure>
