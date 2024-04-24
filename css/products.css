@@ -1,5 +1,5 @@
 #product_section {
-  padding: 0 15vw;
+  padding: 0 12vw 8vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1vw;
@@ -50,7 +50,7 @@
 .price {
   display: flex;
   gap: 2vw;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0;
 }
@@ -66,11 +66,19 @@
 }
 
 .starPriceCart .fa-cart-shopping {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .starPriceCart .fa-cart-shopping:hover {
   scale: 1.1;
+}
+
+@media screen and (max-width: 640px) {
+  #product_section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+    padding: 3vh 5vw;
+  }
 }

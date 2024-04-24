@@ -11,10 +11,13 @@
 }
 
 #form_search {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid var(--BLACK);
 }
 
 #form_search input {
+  flex-grow: 1;
   font-size: 1.2rem;
   padding: 0.5vw;
   border: none;
@@ -49,8 +52,8 @@
 
 @media screen and (max-width: 640px) {
   #sort_section {
-    padding: 5vh 6vw;
-    gap: 4vh;
+    padding: 2vh 5vw;
+    gap: 2vh;
   }
 
   #sort_section h1 {
@@ -59,7 +62,7 @@
 
   #form_search {
     order: 3;
-    margin: auto;
+    width: 100%;
   }
 
   #form_search input {
