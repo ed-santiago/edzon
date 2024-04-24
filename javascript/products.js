@@ -1,4 +1,5 @@
 const productSection = document.querySelector("#product_section");
+const productDialog = document.querySelector("#product_dialog");
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
@@ -27,9 +28,18 @@ function renderProduct(product) {
     </div>
   `
   productSection.append(productDiv);
+  productDiv.addEventListener("click", () => {
+    productDialog.showModal();
+    productDialog.innerHTML = `
+      <figure>
+        <img src="${product.image}" alt="${product.title}">
+      </figure>
+      <div></div>
+    `
+  })
 }
 
-//star rating for product cards
+//Star rating for product cards
 
 function starRating(rating) {
   let ratingStar = "";
@@ -54,4 +64,10 @@ function displayPrice(product) {
   } else {
     return `<p>$${price.originalPrice}</p>`
   }
+}
+
+//Open product info dialog
+
+function openProductDialog(product) {
+  console.log(product);
 }
