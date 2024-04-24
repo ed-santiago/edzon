@@ -17,13 +17,13 @@ allNav.addEventListener("click", () => {
 //Mens filter
 const menNav = document.querySelector(".nav_men");
 menNav.addEventListener("click", () => {
-  productsFilter("Men's clothing");
+  productsFilter("Men's");
 })
 
 //Womens filter
 const womenNav = document.querySelector(".nav_women");
 womenNav.addEventListener("click", () => {
-  productsFilter("Women's clothing");
+  productsFilter("Women's");
 })
 
 //Jewellery filter

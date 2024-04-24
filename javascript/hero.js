@@ -4,12 +4,13 @@ const slider = document.querySelector("#slider");
 const sliderNavList = document.querySelectorAll("#slider_nav a");
 const sliderNavArray = Array.from(sliderNavList)
 
-let counter = 1;
+let counter = 0;
 const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
 function automateSlider() {
+  increaseCounter();
   slider.scrollBy(100, 0);
-  if (slider.scrollLeft === maxScrollLeft) {
+  if (counter === 2) {
     slider.scrollTo(0, 0);
   }
 
@@ -22,7 +23,6 @@ function automateSlider() {
       increaseCounter();
     })
   })
-  increaseCounter();
 }
 
 function increaseCounter() {
@@ -32,4 +32,4 @@ function increaseCounter() {
   }
 }
 
-const intervalId = setInterval(automateSlider, 5000);
+const intervalId = setInterval(automateSlider, 2000);

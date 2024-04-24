@@ -31,23 +31,31 @@ formSort.addEventListener("change", (e) => {
       renderProducts(highestPrice());
       break;
     case "sale":
-      console.log("sale");
+      renderProducts(displaySale());
       break;
   }
 })
 
 function lowestPrice() {
   if (filteredProducts.length === 0) {
-    return [...productsArray].sort((a, b) => a.price - b.price)
+    return [...productsArray].sort((a, b) => a.price.originalPrice - b.price.originalPrice)
   } else {
-    return filteredProducts.sort((a, b) => a.price - b.price)
+    return filteredProducts.sort((a, b) => a.price.originalPrice - b.price.originalPrice)
   }
 }
 
 function highestPrice() {
   if (filteredProducts.length === 0) {
-    return [...productsArray].sort((a, b) => b.price - a.price)
+    return [...productsArray].sort((a, b) => b.price.originalPrice - a.price.originalPrice)
   } else {
-    return filteredProducts.sort((a, b) => b.price - a.price)
+    return filteredProducts.sort((a, b) => b.price.originalPrice - a.price.originalPrice)
+  }
+}
+
+function displaySale() {
+  if (filteredProducts.length === 0) {
+    return [...productsArray].filter(product => product.price.salePrice > 0)
+  } else {
+    return filteredProducts.filter(product => product.price.salePrice > 0)
   }
 }
