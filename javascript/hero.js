@@ -1,38 +1,37 @@
 /* HERO SECTION */
 
 const slider = document.querySelector("#slider");
-const sliderNavList = document.querySelectorAll("#slider_nav a");
-const sliderNavArray = Array.from(sliderNavList)
+const sliderDivs = [...document.querySelectorAll(".background_image")];
+const sliderNavArray = [...document.querySelectorAll("#slider_nav div")];
 
 let counter = 0;
-const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
 function automateSlider() {
-  increaseCounter();
-  slider.scrollBy(100, 0);
   if (counter === 2) {
+    counter = 0;
     slider.scrollTo(0, 0);
+  } else {
+    counter += 1;
+    slider.scrollBy(100, 0);
   }
-
+  
   sliderNavArray.forEach((nav, index) => {
     counter === index ? nav.style.scale = "1.8" : nav.style.scale = "1";
-    nav.addEventListener("click", () => {
-      counter = index;
-      nav.style.scale = "1.8";
-      sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
-      increaseCounter();
-    })
   })
 }
 
-function increaseCounter() {
-  counter += 1;
-  if (counter >= sliderNavArray.length) {
-    counter = 0;
-  }
-}
+let intervalId = setInterval(automateSlider, 5000);
 
-/* const intervalId = setInterval(automateSlider, 2000); */
+sliderNavArray.forEach((nav, navIndex) => {
+  nav.addEventListener("click", () => {
+    counter = navIndex;
+    nav.style.scale = "1.8";
+    sliderDivs.find((div, divIndex) => divIndex === navIndex).scrollIntoView({block: 'center'});
+    sliderNavArray.filter(otherNav => otherNav !== nav).forEach(otherNav => otherNav.style.scale = "1");
+    clearInterval(intervalId);
+    intervalId = setInterval(automateSlider, 5000);
+  })
+})
 
 /* HERO SECTION BUTTONS */
 
