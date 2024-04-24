@@ -32,4 +32,25 @@ function increaseCounter() {
   }
 }
 
-const intervalId = setInterval(automateSlider, 2000);
+/* const intervalId = setInterval(automateSlider, 2000); */
+
+/* HERO SECTION BUTTONS */
+
+//Clothes Sale
+const slide1Button = document.querySelector("#slide_1 button");
+slide1Button.addEventListener("click", () => {
+  const clothesCategory = productsArray.filter(product => {
+    return product.category === "Men's" ||
+      product.category === "Women's"
+  })
+  filteredProducts = clothesCategory.filter(product => product.price.salePrice > 0);
+  renderProducts(filteredProducts);
+})
+
+//Jewellery Sale
+const slide2Button = document.querySelector("#slide_2 button");
+slide2Button.addEventListener("click", () => {
+  const jewelleryCategory = productsArray.filter(product => product.category === "Jewellery");
+  filteredProducts = jewelleryCategory.filter(product => product.price.salePrice > 0);
+  renderProducts(filteredProducts)
+})
