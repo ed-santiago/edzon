@@ -35,19 +35,19 @@
   font-size: 1.3rem;
 }
 
-.starPriceCart {
+.cardPriceCart {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0;
 }
 
-.star_and_price .fa-star {
+.cardPriceRating .fa-star {
   font-size: 0.8rem;
   color: gold;
 }
 
-.price {
+.cardPrice {
   display: flex;
   gap: 2vw;
   font-size: 1.2rem;
@@ -55,23 +55,23 @@
   margin-bottom: 0;
 }
 
-.price p {
+.cardPrice p {
   padding: 0.5vh;
   margin-bottom: 0;
 }
 
-.sale_price {
+.salePrice {
   background-color: rgb(180, 0, 0);
   color: var(--WHITE);
 }
 
-.starPriceCart .fa-cart-shopping {
+.cardPriceCart .fa-cart-shopping {
   font-size: 1.6rem;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.starPriceCart .fa-cart-shopping:hover {
+.cardPriceCart .fa-cart-shopping:hover {
   scale: 1.1;
 }
 

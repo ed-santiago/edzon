@@ -1,7 +1,6 @@
 const productSection = document.querySelector("#product_section");
 const productDialog = document.querySelector("#product_dialog");
-const productInfo = document.querySelector("#product_info");
-const productDescription = document.querySelector("#product_description p");
+const productInfo = document.querySelector(".product_info");
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
@@ -19,27 +18,18 @@ function renderProduct(product) {
     <img src="${product.image}" alt="${product.title}">
     <p class="category">${product.category}</p>
     <h2>${product.title}</h2>
-    <div class=starPriceCart>
-      <div class="star_and_price">
+    <div class=cardPriceCart>
+      <div class="cardPriceRating">
         ${starRating(product.rating)}
-        <div class="price">
-        ${displayPrice(product)}
+        <div class="cardPrice">
+          ${displayPrice(product)}
         </div>
       </div>
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
   `
   productSection.append(productDiv);
-  productDiv.addEventListener("click", () => {
-    productDialog.showModal();
-    productInfo.innerHTML = `
-      <figure>
-        <img src="${product.image}" alt="${product.title}">
-      </figure>
-      <div></div>
-    `
-    productDescription.textContent = `${product.description}`;
-  })
+  productDiv.addEventListener("click", () => openProductDialog(product))
 }
 
 //Star rating for product cards
@@ -62,7 +52,7 @@ function displayPrice(product) {
   if (price.salePrice > 0) {
     return `
       <p><del>$${price.originalPrice}</del></p>
-      <p class="sale_price">$${price.salePrice}</p>
+      <p class="salePrice">$${price.salePrice}</p>
     `
   } else {
     return `<p>$${price.originalPrice}</p>`
@@ -72,5 +62,28 @@ function displayPrice(product) {
 //Open product info dialog
 
 function openProductDialog(product) {
-  console.log(product);
+  productDialog.showModal();
+  productInfo.innerHTML = `
+    <figure>
+      <img src="${product.image}" alt="${product.title}">
+    </figure>
+    <div class="info">
+      <div class="info_title">
+        <h1>${product.title}</h1>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <hr>
+      <div class="infoPriceRating">
+        <div class="infoPrice">
+          ${displayPrice(product)}
+        </div>
+        <div class="infoRating">
+          ${starRating(product.rating)}
+        </div>
+      </div>
+      <h2>Description</h2>
+      <p class=infoDescription>${product.description}</p>
+      <button class=infoButton>Add To Cart</button>
+    </div>
+  `
 }
