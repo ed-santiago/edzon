@@ -8,7 +8,6 @@
 .product_card {
   padding: 1vw;
   background-color: whitesmoke;
-  cursor: pointer;
 }
 
 .product_card:hover img {
@@ -25,6 +24,7 @@
   object-fit: contain;
   margin-bottom: 2vh;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .category {

@@ -29,7 +29,8 @@ function renderProduct(product) {
     </div>
   `
   productSection.append(productDiv);
-  productDiv.addEventListener("click", () => openProductDialog(product))
+  const cardImage = productDiv.querySelector("img");
+  cardImage.addEventListener("click", () => openProductDialog(product))
 }
 
 //Star rating for product cards
