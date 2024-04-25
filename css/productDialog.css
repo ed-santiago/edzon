@@ -84,3 +84,39 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+@media screen and (max-width: 640px) {
+  #product_dialog {
+    min-width: 90vw; max-width: 90vw;
+    padding: 1vh;
+  }
+
+  .product_info {
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .product_info figure {
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .info_title {
+    font-size: 1rem;
+  }
+
+  .info_title .fa-xmark {
+    font-size: 2.5rem;
+  }
+
+  .infoPrice {
+    gap: 3vh;
+  }
+
+  .infoButton {
+    margin-bottom: 0.5vh;
+  }
+}
