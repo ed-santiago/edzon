@@ -55,6 +55,7 @@ header {
   color: var(--WHITE);
   padding: 0.5vh 0.5vh 0.3vh;
   border-radius: 50%;
+  display: none;
 }
 
 #header_icons .fa-solid:hover {
