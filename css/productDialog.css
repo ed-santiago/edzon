@@ -34,14 +34,20 @@
   margin-bottom: 2vh;
 }
 
-.info_title {
+.infoTitle {
   display: flex;
   justify-content: space-between;
   font-size: 1.3rem;
 }
 
-.info_title .fa-xmark {
+.infoTitle .fa-xmark {
   font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.infoTitle .fa-xmark:hover {
+  scale: 1.1;
 }
 
 .info hr {
@@ -83,6 +89,7 @@
   color: var(--WHITE);
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {
@@ -104,11 +111,11 @@
     width: 100%;
   }
 
-  .info_title {
+  .infoTitle {
     font-size: 1rem;
   }
 
-  .info_title .fa-xmark {
+  .infoTitle .fa-xmark {
     font-size: 2.5rem;
   }
 

@@ -68,7 +68,7 @@ function openProductDialog(product) {
       <img src="${product.image}" alt="${product.title}">
     </figure>
     <div class="info">
-      <div class="info_title">
+      <div class="infoTitle">
         <h1>${product.title}</h1>
         <i class="fa-solid fa-xmark"></i>
       </div>
@@ -86,4 +86,8 @@ function openProductDialog(product) {
       <button class=infoButton>Add To Cart</button>
     </div>
   `
+  const infoXButton = document.querySelector(".infoTitle .fa-xmark");
+  infoXButton.addEventListener("click", () => {
+    productDialog.close();
+  })
 }

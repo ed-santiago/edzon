@@ -8,6 +8,7 @@
 .product_card {
   padding: 1vw;
   background-color: whitesmoke;
+  cursor: pointer;
 }
 
 .product_card:hover img {
