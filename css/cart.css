@@ -28,6 +28,7 @@
 
 .cartProductDiv {
   display: flex;
+  gap: 1vw;
   max-height: 20vh;
   margin-bottom: 2vh;
   padding: 1vw;
@@ -43,4 +44,73 @@
   width: 100%;
   aspect-ratio: 1 /1 ;
   object-fit: contain;
+}
+
+.cart_product {
+  width: 100%;
+}
+
+.cart_product h2 {
+  margin-bottom: 1vh;
+}
+
+.cart_product p {
+  font-size: 1.2rem;
+}
+
+.cartInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartPriceQuantity {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.cart_price {
+  display: flex;
+  gap: 1vh;
+  align-items: center;
+}
+
+.quantity {
+  display: flex;
+  gap: 0.5vh;
+  align-items: center;
+}
+
+.quantity .fa-solid {
+  font-size: 1.4rem;
+}
+
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtotal p:nth-child(1) {
+  font-weight: bold;
+}
+
+.removeItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.removeItem p:nth-child(1) {
+  font-weight: bold;
+}
+
+.removeItem .fa-trash {
+  color: var(--WHITE);
+  background-color: rgb(180, 0, 0);
+  font-size: 1.2rem;
+  padding: 1vh;
+  border-radius: 50%;
 }

@@ -55,9 +55,43 @@ function renderCartProduct(product) {
     <figure>
       <img src="${product.image}" alt="${product.title}">
     </figure>
-    
+    <div class="cart_product">
+      <h2>${product.title}</h2>
+
+      <div class="cartInfoContainer">
+        <div class="cartPriceQuantity">
+          <div class="cart_price">
+            <p>Price:</p>
+            ${displayCartProductPrice(product)}
+          </div>
+          <div class="quantity">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <p>${product.quantity}</p>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          </div>
+        </div>
+
+        <div class="subtotal">
+          <p>Subtotal</p>
+          <p>$${product.price.originalPrice}</p>
+        </div>
+
+        <div class="removeItem">
+          <p>Remove</p>
+          <i class="fa-solid fa-trash"></i>
+        </div>
+      </div>
+    </div>
   `
   cartProductsSection.append(cartProductDiv);
+}
+
+//Display cart product price
+function displayCartProductPrice(product) {
+  if (product.price.salePrice > 0)
+    return `<p class="salePrice">$${product.price.salePrice}</p>`
+  else
+    return `<p>$${product.price.originalPrice}</p>`
 }
 
 //Open cart dialog
