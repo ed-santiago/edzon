@@ -1,0 +1,16 @@
+#cart {
+  margin: auto;
+  padding: 1vw;
+  min-width: 40vw; max-width: 40vw;
+  border: 2px solid var(--BLACK);
+}
+
+#cart_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cart_title .fa-xmark {
+  font-size: 2rem;
+}

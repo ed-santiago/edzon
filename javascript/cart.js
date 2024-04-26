@@ -45,3 +45,11 @@ function addToCart(product) {
       });
   }
 }
+
+//Open cart dialog
+const cartDialog = document.querySelector("#cart");
+const cartIcon = document.querySelector("#cart_icon");
+
+cartIcon.addEventListener("click", () => {
+  cartDialog.showModal();
+})
