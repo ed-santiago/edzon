@@ -7,6 +7,7 @@ fetch("https://edzon-db.onrender.com/cart")
     cartArray = cartProducts;
     cartTextContent.textContent = cartArray.length;
     cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+    renderCartProducts(cartProducts);
   })
 
 function addToCart(product) {
@@ -39,6 +40,24 @@ function addToCart(product) {
         cartTextContent.textContent = cartArray.length;
       });
   }
+}
+
+function renderCartProducts(cartProducts) {
+  cartProducts.forEach(product => renderCartProduct(product));
+}
+
+const cartProductsSection = document.querySelector("#cart_products");
+
+function renderCartProduct(product) {
+  const cartProductDiv = document.createElement("div");
+  cartProductDiv.classList.add("cartProductDiv");
+  cartProductDiv.innerHTML = `
+    <figure>
+      <img src="${product.image}" alt="${product.title}">
+    </figure>
+    
+  `
+  cartProductsSection.append(cartProductDiv);
 }
 
 //Open cart dialog

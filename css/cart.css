@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3vh;
 }
 
 #cart_title .fa-xmark {
@@ -23,4 +24,23 @@
 
 #cart_title .fa-xmark:hover {
   scale: 1.1;
+}
+
+.cartProductDiv {
+  display: flex;
+  max-height: 20vh;
+  margin-bottom: 2vh;
+  padding: 1vw;
+  border: 2px solid black;
+}
+
+.cartProductDiv figure {
+  max-width: 12.5vh;
+  max-height: 12.5vh;
+}
+
+.cartProductDiv img {
+  width: 100%;
+  aspect-ratio: 1 /1 ;
+  object-fit: contain;
 }
