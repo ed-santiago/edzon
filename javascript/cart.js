@@ -1,18 +1,12 @@
 let cartArray = [];
-let cartCounter = 0;
 const cartTextContent = document.querySelector("#header_icons .fa-cart-shopping p");
 
 fetch("https://edzon-db.onrender.com/cart")
   .then(res => res.json())
   .then(cartProducts => {
     cartArray = cartProducts;
-    cartCounter += cartArray.length;
-    cartTextContent.textContent = cartCounter;
-    if (cartArray.length === 0) {
-      cartTextContent.style.display = "none";
-    } else {
-      cartTextContent.style.display = "block";
-    }
+    cartTextContent.textContent = cartArray.length;
+    cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
   })
 
 function addToCart(product) {
@@ -32,16 +26,17 @@ function addToCart(product) {
     body: JSON.stringify(productData),
   };
 
-  const findProduct = cartArray.find(obj => obj === product);
+  const findProduct = cartArray.find(obj => obj.title === product.title);
 
   if (findProduct) {
     alert("Item already in cart!");
   } else {
     fetch("https://edzon-db.onrender.com/cart", configurationObject)
       .then(res => res.json())
-      .then(() => {
-        cartCounter += 1
-        cartTextContent.textContent = cartCounter
+      .then((cartProduct) => {
+        cartArray.push(cartProduct);
+        cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+        cartTextContent.textContent = cartArray.length;
       });
   }
 }
@@ -50,6 +45,8 @@ function addToCart(product) {
 const cartDialog = document.querySelector("#cart");
 const cartIcon = document.querySelector("#cart_icon");
 
-cartIcon.addEventListener("click", () => {
-  cartDialog.showModal();
-})
+cartIcon.addEventListener("click", () => cartDialog.showModal());
+
+//Close dialog
+const cartDialogXButton = document.querySelector("#cart_title .fa-xmark");
+cartDialogXButton.addEventListener("click", () => cartDialog.close());

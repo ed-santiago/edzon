@@ -5,6 +5,10 @@
   border: 2px solid var(--BLACK);
 }
 
+#cart::backdrop {
+  background: rgb(0, 0, 0, 0.5);
+}
+
 #cart_title {
   display: flex;
   justify-content: space-between;
@@ -13,4 +17,10 @@
 
 #cart_title .fa-xmark {
   font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#cart_title .fa-xmark:hover {
+  scale: 1.1;
 }
