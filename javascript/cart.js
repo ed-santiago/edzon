@@ -36,6 +36,7 @@ function addToCart(product) {
       .then(res => res.json())
       .then((cartProduct) => {
         cartArray.push(cartProduct);
+        renderCartProduct(cartProduct);
         cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
         cartTextContent.textContent = cartArray.length;
       });
@@ -64,10 +65,11 @@ function renderCartProduct(product) {
             <p>Price:</p>
             ${displayCartProductPrice(product)}
           </div>
+
           <div class="quantity">
-            <i class="fa-solid fa-circle-arrow-left"></i>
+            <button class="decreaseQuantity"><i class="fa-solid fa-circle-arrow-left"></i></button>
             <p>${product.quantity}</p>
-            <i class="fa-solid fa-circle-arrow-right"></i>
+            <button class="increaseQuantity"><i class="fa-solid fa-circle-arrow-right"></i></button>
           </div>
         </div>
 
@@ -84,6 +86,32 @@ function renderCartProduct(product) {
     </div>
   `
   cartProductsSection.append(cartProductDiv);
+
+  let quantity = cartProductDiv.querySelector(".quantity p");
+  const decreaseQuantity = cartProductDiv.querySelector(".decreaseQuantity")
+  decreaseQuantity.addEventListener("click", () => addOrSubtract(product => product.quantity -= 1))
+  
+  const increaseQuantity = cartProductDiv.querySelector(".increaseQuantity")
+  increaseQuantity.addEventListener("click", () => addOrSubtract(product => product.quantity += 1))
+  product.quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
+
+  function addOrSubtract(changeQuantity) {
+    changeQuantity(product);
+    product.quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
+    quantity.textContent = product.quantity;
+    updateQuantityFunc(product);
+  }
+}
+
+function updateQuantityFunc(product) {
+  fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify(product),
+  })
 }
 
 //Display cart product price
@@ -97,7 +125,6 @@ function displayCartProductPrice(product) {
 //Open cart dialog
 const cartDialog = document.querySelector("#cart");
 const cartIcon = document.querySelector("#cart_icon");
-
 cartIcon.addEventListener("click", () => cartDialog.showModal());
 
 //Close dialog
