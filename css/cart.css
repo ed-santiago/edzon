@@ -114,3 +114,8 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+#cart_total {
+  display: flex;
+  justify-content: space-between;
+}
