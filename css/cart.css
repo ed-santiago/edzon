@@ -99,19 +99,11 @@
   align-items: center;
 }
 
-.subtotal p:nth-child(1) {
-  font-weight: bold;
-}
-
 .removeItem {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.removeItem p:nth-child(1) {
-  font-weight: bold;
 }
 
 .removeItem .fa-trash {

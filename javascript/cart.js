@@ -74,12 +74,12 @@ function renderCartProduct(product) {
         </div>
 
         <div class="subtotal">
-          <p>Subtotal</p>
-          <p>$${product.price.originalPrice}</p>
+          <h3>Subtotal</h3>
+          <p>$${displaySubtotal(product)}</p>
         </div>
 
         <div class="removeItem">
-          <p>Remove</p>
+          <h3>Remove</h3>
           <i class="fa-solid fa-trash"></i>
         </div>
       </div>
@@ -87,8 +87,10 @@ function renderCartProduct(product) {
   `
   cartProductsSection.append(cartProductDiv);
 
+  const subtotal = cartProductDiv.querySelector(".subtotal p");
+
   //Update quantity
-  let quantity = cartProductDiv.querySelector(".quantity p");
+  const quantity = cartProductDiv.querySelector(".quantity p");
   const decreaseQuantity = cartProductDiv.querySelector(".decreaseQuantity")
   decreaseQuantity.addEventListener("click", () => addOrSubtract(product => product.quantity -= 1))
 
@@ -98,6 +100,7 @@ function renderCartProduct(product) {
 
   function addOrSubtract(changeQuantity) {
     changeQuantity(product);
+    subtotal.textContent = `$${displaySubtotal(product)}`;
     product.quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
     quantity.textContent = product.quantity;
     updateQuantityFunc(product);
@@ -132,6 +135,16 @@ function displayCartProductPrice(product) {
     return `<p class="salePrice">$${product.price.salePrice}</p>`
   else
     return `<p>$${product.price.originalPrice}</p>`
+}
+
+//Display subtotal
+function displaySubtotal(product) {
+  const price = product.price;
+  if (price.salePrice > 0) {
+    return product.quantity * price.salePrice;
+  } else {
+    return product.quantity * price.originalPrice;
+  }
 }
 
 //Open cart dialog
