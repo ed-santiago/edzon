@@ -87,10 +87,11 @@ function renderCartProduct(product) {
   `
   cartProductsSection.append(cartProductDiv);
 
+  //Update quantity
   let quantity = cartProductDiv.querySelector(".quantity p");
   const decreaseQuantity = cartProductDiv.querySelector(".decreaseQuantity")
   decreaseQuantity.addEventListener("click", () => addOrSubtract(product => product.quantity -= 1))
-  
+
   const increaseQuantity = cartProductDiv.querySelector(".increaseQuantity")
   increaseQuantity.addEventListener("click", () => addOrSubtract(product => product.quantity += 1))
   product.quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
@@ -101,6 +102,17 @@ function renderCartProduct(product) {
     quantity.textContent = product.quantity;
     updateQuantityFunc(product);
   }
+
+  //Remove item from cart
+  cartProductDiv.querySelector(".removeItem .fa-trash").addEventListener("click", () => {
+    cartProductDiv.remove();
+    cartArray = cartArray.filter(cartProduct => cartProduct !== product);
+    cartTextContent.textContent -= 1;
+    cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+    fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
+      method: "DELETE"
+    })
+  })
 }
 
 function updateQuantityFunc(product) {
