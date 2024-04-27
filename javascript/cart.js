@@ -159,9 +159,6 @@ function displaySubtotal(product) {
   }
 }
 
-//Display total
-const subtotal = document.querySelectorAll(".subtotal p");
-
 //Open cart dialog
 const cartDialog = document.querySelector("#cart");
 const cartIcon = document.querySelector("#cart_icon");

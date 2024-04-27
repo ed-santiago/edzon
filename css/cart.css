@@ -26,6 +26,13 @@
   scale: 1.1;
 }
 
+#cart_products {
+  max-height: 75vh;
+  overflow-y: auto;
+  margin-bottom: 3vh;
+  border-bottom: 2px solid black;
+}
+
 .cartProductDiv {
   display: flex;
   gap: 1vw;
@@ -118,4 +125,20 @@
 #cart_total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+#cart_total button {
+  background-color: rgb(180, 0, 0);
+  color: var(--WHITE);
+  font-size: 1.5rem;
+  border: none;
+  padding: 1vh;
+}
+
+@media screen and (max-width: 640px) {
+  #cart {
+    min-width: 100%; max-width: 100%;
+    padding: 1vh;
+  }
 }

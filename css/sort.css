@@ -83,6 +83,10 @@
     font-size: 1.3rem;
   }
 
+  #form_sort label {
+    display: none;
+  }
+
   #form_sort select {
     font-size: 1.3rem;
   }

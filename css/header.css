@@ -64,7 +64,7 @@ header {
 
 #header_icons {
   display: flex;
-  gap: 12vw;
+  gap: 6vw;
   cursor: pointer;
 }
 
