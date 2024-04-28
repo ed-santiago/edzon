@@ -33,34 +33,25 @@ function addToCart(product) {
   if (findProduct) {
     alert("Item already in cart!");
   } else {
+    cartArray.push(productData);
     fetch("https://edzon-db.onrender.com/cart", configurationObject)
       .then(res => res.json())
       .then((cartProduct) => {
-        cartArray.push(cartProduct);
         renderCartProduct(cartProduct);
         cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
         cartTextContent.textContent = cartArray.length;
+        total.textContent = `Total: $${cartTotal()}`;
       });
   }
 }
 
 function renderCartProducts(cartProducts) {
-  function cartTotal() {
-    return cartProducts.reduce((total, product) => {
-      if (product.price.salePrice > 0) {
-        return total + product.price.salePrice * product.quantity;
-      } else {
-        return total + product.price.originalPrice * product.quantity;
-      }
-    }, 0);
-  }
-  total.textContent = `Total: $${cartTotal()}`;
-  cartProducts.forEach(product => renderCartProduct(product, cartTotal));
+  cartProducts.forEach(product => renderCartProduct(product));
 }
 
 const cartProductsSection = document.querySelector("#cart_products");
 
-function renderCartProduct(product, cartTotal) {
+function renderCartProduct(product) {
   const cartProductDiv = document.createElement("div");
   cartProductDiv.classList.add("cartProductDiv");
   cartProductDiv.innerHTML = `
@@ -97,6 +88,7 @@ function renderCartProduct(product, cartTotal) {
     </div>
   `
   cartProductsSection.append(cartProductDiv);
+  total.textContent = `Total: $${cartTotal()}`;
 
   const subtotal = cartProductDiv.querySelector(".subtotal p");
 
@@ -124,6 +116,7 @@ function renderCartProduct(product, cartTotal) {
     cartArray = cartArray.filter(cartProduct => cartProduct !== product);
     cartTextContent.textContent -= 1;
     cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+    total.textContent = `Total: $${cartTotal()}`;
     fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
       method: "DELETE"
     })
@@ -157,6 +150,20 @@ function displaySubtotal(product) {
   } else {
     return product.quantity * price.originalPrice;
   }
+}
+
+
+
+//Display total
+function cartTotal() {
+  const subTotalP = [...document.querySelectorAll(".subtotal p")];
+  const pTextContent = subTotalP.map(p => p.textContent)
+  const priceArray = pTextContent.map(price => {
+    const stringArray = [...price];
+    stringArray.shift();
+    return parseInt(stringArray.join(""));
+  })
+  return priceArray.reduce((total,price) => total + price, 0)
 }
 
 //Open cart dialog
