@@ -152,8 +152,6 @@ function displaySubtotal(product) {
   }
 }
 
-
-
 //Display total
 function cartTotal() {
   const subTotalP = [...document.querySelectorAll(".subtotal p")];
@@ -163,8 +161,44 @@ function cartTotal() {
     stringArray.shift();
     return parseInt(stringArray.join(""));
   })
-  return priceArray.reduce((total,price) => total + price, 0)
+  return priceArray.reduce((total, price) => total + price, 0)
 }
+
+//Checkout
+const checkOutButton = document.querySelector("#cart_total button");
+checkOutButton.addEventListener("click", () => {
+  for (let i = 1; i < (cartArray.length + 1); i++) {
+    fetch(`https://edzon-db.onrender.com/cart/${i}`, {
+      method: "DELETE"
+    })
+  }
+
+  /* cartArray.map(cart => {
+    console.log(cart.id)
+    fetch(`https://edzon-db.onrender.com/cart/${cart.id}`, {
+      method: "DELETE"
+    })
+  }) */
+
+  /* fetch("https://edzon-db.onrender.com/cart")
+    .then(res => res.json())
+    .then(products => {
+      for (const product of cartArray) {
+        fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
+          method: "DELETE"
+        })
+      }
+      })
+    }); */
+  cartArray.splice(0, cartArray.length);
+  alert("Check out successful. Thank you for shopping with edzon!");
+  fetch("https://edzon-db.onrender.com/cart")
+    .then(res => res.json())
+    .then(products => console.log(products))
+  cartProductsSection.innerHTML = "";
+  console.log(cartArray)
+  location.reload();
+})
 
 //Open cart dialog
 const cartDialog = document.querySelector("#cart");
