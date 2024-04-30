@@ -34,14 +34,12 @@ function addToCart(product) {
     alert("Item already in cart!");
   } else {
     cartArray.push(productData);
+    cartTextContent.textContent = cartArray.length;
+    cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+    total.textContent = `Total: $${cartTotal()}`;
     fetch("https://edzon-db.onrender.com/cart", configurationObject)
       .then(res => res.json())
-      .then((cartProduct) => {
-        renderCartProduct(cartProduct);
-        cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
-        cartTextContent.textContent = cartArray.length;
-        total.textContent = `Total: $${cartTotal()}`;
-      });
+      .then((cartProduct) => renderCartProduct(cartProduct));
   }
 }
 
@@ -113,8 +111,8 @@ function renderCartProduct(product) {
   //Remove item from cart
   cartProductDiv.querySelector(".removeItem .fa-trash").addEventListener("click", () => {
     cartProductDiv.remove();
-    cartArray = cartArray.filter(cartProduct => cartProduct !== product);
-    cartTextContent.textContent -= 1;
+    cartArray = cartArray.filter(cartProduct => cartProduct.title !== product.title);
+    cartTextContent.textContent = cartArray.length;
     cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
     total.textContent = `Total: $${cartTotal()}`;
     fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
@@ -172,31 +170,9 @@ checkOutButton.addEventListener("click", () => {
       method: "DELETE"
     })
   }
-
-  /* cartArray.map(cart => {
-    console.log(cart.id)
-    fetch(`https://edzon-db.onrender.com/cart/${cart.id}`, {
-      method: "DELETE"
-    })
-  }) */
-
-  /* fetch("https://edzon-db.onrender.com/cart")
-    .then(res => res.json())
-    .then(products => {
-      for (const product of cartArray) {
-        fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
-          method: "DELETE"
-        })
-      }
-      })
-    }); */
   cartArray.splice(0, cartArray.length);
   alert("Check out successful. Thank you for shopping with edzon!");
-  fetch("https://edzon-db.onrender.com/cart")
-    .then(res => res.json())
-    .then(products => console.log(products))
   cartProductsSection.innerHTML = "";
-  console.log(cartArray)
   location.reload();
 })
 

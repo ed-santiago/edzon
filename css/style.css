@@ -18,3 +18,25 @@ body {
   --BLACK: black;
   --WHITE: white;
 }
+
+#loader_container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#loader_container h1 {
+  font-size: 2.5rem;
+  color: rgb(172, 172, 172);
+}
+
+#loader {
+  margin-bottom: 10px;
+  width: 32px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side,rgb(172, 172, 172) 90%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: loading 1s steps(4) infinite;
+}
+@keyframes loading {to{clip-path: inset(0 -34% 0 0)}}

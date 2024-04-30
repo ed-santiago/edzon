@@ -2,9 +2,17 @@ const productSection = document.querySelector("#product_section");
 const productDialog = document.querySelector("#product_dialog");
 const productInfo = document.querySelector(".product_info");
 
-fetch("https://edzon-db.onrender.com/products")
+/* LOADER */
+const loader = `<div id="loader_container">
+  <h1>Loading products</h1>
+  <div id="loader"></div>
+</div>`
+
+productSection.innerHTML = loader;
+
+/* fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => renderProducts(products));
+  .then(products => renderProducts(products)); */
 
 function renderProducts(products) {
   productSection.innerHTML = "";
