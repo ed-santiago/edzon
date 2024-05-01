@@ -72,6 +72,7 @@ function displayPrice(product) {
 
 //Open product info dialog
 function openProductDialog(product) {
+  let quantity = 1;
   productDialog.showModal();
   productInfo.innerHTML = `
     <figure>
@@ -94,8 +95,12 @@ function openProductDialog(product) {
       <h2>Description</h2>
       <p class=infoDescription>${product.description}</p>
       <div class="infoQuantity">
-      <p>Quantity: </p>
-      
+        <p>Quantity: </p>
+        <div class="quantity">
+          <button class="decreaseQuantity"><i class="fa-solid fa-circle-arrow-left"></i></button>
+          <p>${quantity}</p>
+          <button class="increaseQuantity"><i class="fa-solid fa-circle-arrow-right"></i></button>
+        </div>
       </div>
       <button class=infoButton>Add To Cart</button>
     </div>
@@ -104,4 +109,24 @@ function openProductDialog(product) {
   infoXButton.addEventListener("click", () => {
     productDialog.close();
   })
+
+  /* CHANGE QUANTITY */
+
+  const quantityP = document.querySelector(".quantity p");
+
+  const decreaseQuantity = document.querySelector(".decreaseQuantity")
+  decreaseQuantity.addEventListener("click", () => {
+    quantity -= 1;
+    quantityP.textContent = quantity;
+    quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
+  })
+
+  const increaseQuantity = document.querySelector(".increaseQuantity")
+  increaseQuantity.addEventListener("click", () => {
+    quantity += 1;
+    quantityP.textContent = quantity;
+    quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
+  })
+
+  quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
 }
