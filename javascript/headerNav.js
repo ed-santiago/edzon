@@ -13,6 +13,7 @@ fetch("https://edzon-db.onrender.com/products")
 const allNav = document.querySelectorAll(".nav_all");
 allNav.forEach(nav => {
   nav.addEventListener("click", () => {
+    filterTitle.textContent = "All";
     renderProducts(productsArray);
   })
 })
