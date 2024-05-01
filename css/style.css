@@ -40,4 +40,24 @@ body {
   clip-path: inset(0 100% 0 0);
   animation: loading 1s steps(4) infinite;
 }
+
 @keyframes loading {to{clip-path: inset(0 -34% 0 0)}}
+
+footer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 1vh;
+}
+
+#contacts {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+#contact_icons {
+  display: flex;
+  gap: 1.5vh;
+  font-size: 1.5rem;
+}
