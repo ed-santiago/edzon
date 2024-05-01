@@ -17,6 +17,7 @@ body {
 :root {
   --BLACK: black;
   --WHITE: white;
+  --PURPLE: #552c82;
 }
 
 #loader_container {

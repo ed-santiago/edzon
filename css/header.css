@@ -4,11 +4,19 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1vh 10vw;
+  padding: 0.5vh 10vw;
   background-color: var(--WHITE);
-  border-bottom: 2px solid var(--BLACK);
+  border-bottom: 2px solid var(--PURPLE);
   position: fixed;
   z-index: 1;
+}
+
+header figure {
+  width: 40px;
+}
+
+header figure img {
+  width: 100%;
 }
 
 #menu_bar ul {
@@ -19,7 +27,7 @@ header {
 
 #menu_bar ul li a {
   text-decoration: none;
-  color: var(--BLACK);
+  color: var(--PURPLE);
   font-size: 1.2rem;
   padding: 0.6vh;
   position: relative;
@@ -32,7 +40,7 @@ header {
   width: 0;
   left: 0;
   bottom: 0;
-  background-color: var(--BLACK);
+  background-color: var(--PURPLE);
   transition: 0.3s;
 }
 
@@ -66,6 +74,7 @@ header {
   display: flex;
   gap: 6vw;
   cursor: pointer;
+  color: var(--PURPLE);
 }
 
 #ham_icon {
@@ -91,7 +100,7 @@ header {
   z-index: 2;
   top: 0;
   right: -100vw;
-  background-color: var(--BLACK);
+  background-color: var(--PURPLE);
   padding: 2vw 5vw;
   transition: .3s;
 }

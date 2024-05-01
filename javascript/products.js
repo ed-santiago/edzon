@@ -10,9 +10,9 @@ const loader = `<div id="loader_container">
 
 productSection.innerHTML = loader;
 
-/* fetch("https://edzon-db.onrender.com/products")
+fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => renderProducts(products)); */
+  .then(products => renderProducts(products));
 
 function renderProducts(products) {
   productSection.innerHTML = "";
@@ -93,6 +93,10 @@ function openProductDialog(product) {
       </div>
       <h2>Description</h2>
       <p class=infoDescription>${product.description}</p>
+      <div class="infoQuantity">
+      <p>Quantity: </p>
+      
+      </div>
       <button class=infoButton>Add To Cart</button>
     </div>
   `
