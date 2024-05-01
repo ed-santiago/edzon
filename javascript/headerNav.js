@@ -7,7 +7,10 @@ let filteredProducts = [];
 
 fetch("https://edzon-db.onrender.com/products")
   .then(res => res.json())
-  .then(products => productsArray = products);
+  .then(products => {
+    productsArray = products
+    console.log(productsArray)
+  });
 
 //Show all products
 const allNav = document.querySelectorAll(".nav_all");

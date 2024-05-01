@@ -38,24 +38,35 @@ formSort.addEventListener("change", (e) => {
 
 function lowestPrice() {
   if (filteredProducts.length === 0) {
-    return [...productsArray].sort((a, b) => a.price.originalPrice - b.price.originalPrice)
+    return [...productsArray].sort((a, b) => sortPrice(a, b));
   } else {
-    return filteredProducts.sort((a, b) => a.price.originalPrice - b.price.originalPrice)
+    return filteredProducts.sort((a, b) => sortPrice(a, b));
   }
 }
 
 function highestPrice() {
   if (filteredProducts.length === 0) {
-    return [...productsArray].sort((a, b) => b.price.originalPrice - a.price.originalPrice)
+    return [...productsArray].sort((a, b) => sortPrice(b, a));
   } else {
-    return filteredProducts.sort((a, b) => b.price.originalPrice - a.price.originalPrice)
+    return filteredProducts.sort((a, b) => sortPrice(b, a));
   }
 }
 
 function displaySale() {
   if (filteredProducts.length === 0) {
-    return [...productsArray].filter(product => product.price.salePrice > 0)
+    return productsArray.filter(product => product.price.salePrice > 0)
   } else {
     return filteredProducts.filter(product => product.price.salePrice > 0)
   }
+}
+
+function sortPrice(a, b) {
+  if (a.price.salePrice > 0 && b.price.salePrice > 0)
+        return a.price.salePrice - b.price.salePrice
+      else if (a.price.salePrice > 0)
+        return a.price.salePrice - b.price.originalPrice
+      else if (b.price.salePrice > 0)
+        return a.price.originalPrice - b.price.salePrice
+      else
+      return a.price.originalPrice - b.price.originalPrice
 }
