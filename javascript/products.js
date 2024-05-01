@@ -2,6 +2,10 @@ const productSection = document.querySelector("#product_section");
 const productDialog = document.querySelector("#product_dialog");
 const productInfo = document.querySelector(".product_info");
 
+let cartArray = [];
+const cartTextContent = document.querySelector("#header_icons .fa-cart-shopping p");
+const total = document.querySelector("#total");
+
 /* LOADER */
 const loader = `<div id="loader_container">
   <h1>Loading products</h1>
@@ -42,7 +46,7 @@ function renderProduct(product) {
 
   //Add to cart
   const cardCart = productDiv.querySelector(".fa-cart-shopping");
-  cardCart.addEventListener("click", () => addToCart(product));
+  cardCart.addEventListener("click", () => addToCart(product, 1));
 }
 
 //Star rating for product cards
@@ -129,4 +133,41 @@ function openProductDialog(product) {
   })
 
   quantity === 1 ? decreaseQuantity.disabled = true : decreaseQuantity.disabled = false;
+
+  /* ADD TO CART */
+
+  const addToCartButton = document.querySelector(".infoButton");
+  addToCartButton.addEventListener("click", () => addToCart(product, quantity));
+}
+
+function addToCart(product, quantity) {
+  const productData = {
+    title: product.title,
+    image: product.image,
+    price: product.price,
+    quantity: quantity
+  };
+
+  const configurationObject = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify(productData),
+  };
+
+  const findProduct = cartArray.find(obj => obj.title === product.title);
+
+  if (findProduct) {
+    alert("Item already in cart!");
+  } else {
+    cartArray.push(productData);
+    cartTextContent.textContent = cartArray.length;
+    cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
+    total.textContent = `Total: $${cartTotal()}`;
+    fetch("https://edzon-db.onrender.com/cart", configurationObject)
+      .then(res => res.json())
+      .then((cartProduct) => renderCartProduct(cartProduct));
+  }
 }
