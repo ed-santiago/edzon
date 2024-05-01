@@ -28,14 +28,16 @@ function renderProduct(product) {
   productDiv.classList.add("product_card");
   productDiv.innerHTML = `
     <img src="${product.image}" alt="${product.title}">
-    <p class="category">${product.category}</p>
-    <h2>${product.title}</h2>
-    <div class=cardPriceCart>
+    <div class="category_rating">
+      <p class="category">${product.category}</p>
       <div class="cardPriceRating">
         ${starRating(product.rating)}
-        <div class="cardPrice">
-          ${displayPrice(product)}
-        </div>
+      </div>
+    </div>
+    <h2>${product.title}</h2>
+    <div class=cardPriceCart>
+      <div class="cardPrice">
+        ${displayPrice(product)}
       </div>
       <i class="fa-solid fa-cart-shopping"></i>
     </div>
