@@ -8,8 +8,8 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   max-width: 100%;
-  min-height: 700px;
-  max-height: 700px;
+  min-height: 650px;
+  max-height: 650px;
   color: var(--WHITE);
 }
 
@@ -31,7 +31,7 @@
 }
 
 #slide_3 {
-  color: black;
+  color: var(--BLACK);
 }
 
 #slide_2 div {

@@ -34,7 +34,7 @@
   max-height: 75vh;
   overflow-y: auto;
   margin-bottom: 3vh;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--BLACK);
 }
 
 .cartProductDiv {
@@ -43,7 +43,7 @@
   max-height: 20vh;
   margin-bottom: 2vh;
   padding: 1vw;
-  border: 0.5px solid black;
+  border: 0.5px solid var(--BLACK);
 }
 
 .cartProductDiv figure {
@@ -95,7 +95,7 @@
 
 .quantity button {
   border: none;
-  background-color: white;
+  background-color: var(--WHITE);
 }
 
 .quantity button:focus {

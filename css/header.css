@@ -22,13 +22,13 @@ header figure img {
 #menu_bar ul {
   display: flex;
   list-style-type: none;
-  gap: 3vw;
+  gap: 4vw;
 }
 
 #menu_bar ul li a {
   text-decoration: none;
   color: var(--BLACK);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 0.6vh;
   position: relative;
 }
