@@ -53,3 +53,9 @@ slide2Button.addEventListener("click", () => {
   filteredProducts = jewelleryCategory.filter(product => product.price.salePrice > 0);
   renderProducts(filteredProducts)
 })
+
+//New Monitor
+const slide3Button = document.querySelector("#slide_3 button");
+slide3Button.addEventListener("click", () => {
+  openProductDialog(productsArray[13]);
+})

@@ -62,11 +62,11 @@ function displaySale() {
 
 function sortPrice(a, b) {
   if (a.price.salePrice > 0 && b.price.salePrice > 0)
-        return a.price.salePrice - b.price.salePrice
-      else if (a.price.salePrice > 0)
-        return a.price.salePrice - b.price.originalPrice
-      else if (b.price.salePrice > 0)
-        return a.price.originalPrice - b.price.salePrice
-      else
-      return a.price.originalPrice - b.price.originalPrice
+    return a.price.salePrice - b.price.salePrice
+  else if (a.price.salePrice > 0)
+    return a.price.salePrice - b.price.originalPrice
+  else if (b.price.salePrice > 0)
+    return a.price.originalPrice - b.price.salePrice
+  else
+    return a.price.originalPrice - b.price.originalPrice
 }
