@@ -37,11 +37,12 @@
 .infoTitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 1.3rem;
 }
 
 .infoTitle .fa-xmark {
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   transition: 0.3s;
 }
