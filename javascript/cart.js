@@ -8,10 +8,9 @@ fetch("https://edzon-db.onrender.com/cart")
   })
 
 function renderCartProducts(cartProducts) {
+  cartEmpty();
   cartProducts.forEach(product => renderCartProduct(product));
 }
-
-const cartProductsSection = document.querySelector("#cart_products");
 
 function renderCartProduct(product) {
   const cartProductDiv = document.createElement("div");
@@ -77,6 +76,7 @@ function renderCartProduct(product) {
     cartProductDiv.remove();
     cartArray = cartArray.filter(cartProduct => cartProduct.title !== product.title);
     cartTextContent.textContent = cartArray.length;
+    cartEmpty();
     cartArray.length === 0 ? cartTextContent.style.display = "none" : cartTextContent.style.display = "block";
     total.textContent = `Total: $${cartTotal()}`;
     fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
@@ -129,15 +129,19 @@ function cartTotal() {
 //Checkout
 const checkOutButton = document.querySelector("#cart_total button");
 checkOutButton.addEventListener("click", () => {
-  for (let i = 1; i < (cartArray.length + 1); i++) {
-    fetch(`https://edzon-db.onrender.com/cart/${i}`, {
-      method: "DELETE"
-    })
+  if (cartArray.length === 0) {
+    alert("Nothing to checkout.")
+  } else {
+    for (let i = 1; i < (cartArray.length + 1); i++) {
+      fetch(`https://edzon-db.onrender.com/cart/${i}`, {
+        method: "DELETE"
+      })
+    }
+    cartArray.splice(0, cartArray.length);
+    cartProductsSection.innerHTML = "";
+    alert("Check out successful. Thank you for shopping with edzon!");
+    location.reload();
   }
-  cartArray.splice(0, cartArray.length);
-  alert("Check out successful. Thank you for shopping with edzon!");
-  cartProductsSection.innerHTML = "";
-  location.reload();
 })
 
 //Open cart dialog
@@ -148,3 +152,9 @@ cartIcon.addEventListener("click", () => cartDialog.showModal());
 //Close dialog
 const cartDialogXButton = document.querySelector("#cart_title .fa-xmark");
 cartDialogXButton.addEventListener("click", () => cartDialog.close());
+
+function cartEmpty() {
+  if (cartArray.length === 0) {
+    cartProductsSection.innerHTML = `<p id="empty_cart">Your cart is currently empty.</p>`
+  }
+}

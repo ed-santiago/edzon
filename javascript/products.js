@@ -4,6 +4,7 @@ const productInfo = document.querySelector(".product_info");
 let cartArray = [];
 const cartTextContent = document.querySelector("#header_icons .fa-cart-shopping p");
 const total = document.querySelector("#total");
+const cartProductsSection = document.querySelector("#cart_products");
 
 /* LOADER */
 const loader = `<div id="loader_container">
@@ -142,6 +143,10 @@ function openProductDialog(product) {
 }
 
 function addToCart(product, quantity) {
+  if (cartArray.length === 0) {
+    cartProductsSection.innerHTML = "";
+  }
+
   const productData = {
     title: product.title,
     image: product.image,
