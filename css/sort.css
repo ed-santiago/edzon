@@ -70,12 +70,12 @@
 
   #form_search {
     order: 3;
-    width: 100%;
   }
 
   #form_search input {
     font-size: 1.5rem;
     padding: 2vw;
+    width: 100%;
   }
 
   #form_search button {

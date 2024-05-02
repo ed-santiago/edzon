@@ -72,5 +72,5 @@ hamIcon.addEventListener("click", () => {
 })
 
 hamMenuCloseButton.addEventListener("click", () => {
-  hamMenu.style.right = "-100vw";
+  hamMenu.style.right = "-200vw";
 })

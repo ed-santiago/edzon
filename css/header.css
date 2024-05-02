@@ -99,7 +99,7 @@ header figure img {
   position: fixed;
   z-index: 2;
   top: 0;
-  right: -100vw;
+  right: -200vw;
   background-color: var(--PURPLE);
   padding: 3vw 6.5vw;
   transition: .3s;
