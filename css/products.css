@@ -65,11 +65,6 @@
   margin-bottom: 0;
 }
 
-.cardPrice p {
-  padding: 0.5vh;
-  margin-bottom: 0;
-}
-
 .salePrice {
   background-color: rgb(180, 0, 0);
   color: var(--WHITE);
@@ -94,7 +89,7 @@
     padding: 2vh 5vw;
   }
 
-  .product_card > * {
-    margin-bottom: 1.5vh;
+  .product_card {
+    padding: 1vh;
   }
 }
