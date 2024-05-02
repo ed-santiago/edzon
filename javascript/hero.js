@@ -3,6 +3,7 @@
 const slider = document.querySelector("#slider");
 const sliderDivs = [...document.querySelectorAll(".background_image")];
 const sliderNavArray = [...document.querySelectorAll("#slider_nav div")];
+const sortSection = document.querySelector("#sort_section");
 
 let counter = 0;
 
@@ -44,6 +45,8 @@ slide1Button.addEventListener("click", () => {
   })
   filteredProducts = clothesCategory.filter(product => product.price.salePrice > 0);
   renderProducts(filteredProducts);
+  sortSection.scrollIntoView();
+  filterTitle.textContent = "Clothe's Sale"
 })
 
 //Jewellery Sale
@@ -52,6 +55,8 @@ slide2Button.addEventListener("click", () => {
   const jewelleryCategory = productsArray.filter(product => product.category === "Jewellery");
   filteredProducts = jewelleryCategory.filter(product => product.price.salePrice > 0);
   renderProducts(filteredProducts)
+  sortSection.scrollIntoView();
+  filterTitle.textContent = "Jewellery Sale"
 })
 
 //New Monitor

@@ -15,6 +15,7 @@ allNav.forEach(nav => {
   nav.addEventListener("click", () => {
     filterTitle.textContent = "All";
     renderProducts(productsArray);
+    hamMenu.style.right = "-100vw";
   })
 })
 
