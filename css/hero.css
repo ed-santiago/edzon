@@ -27,7 +27,7 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 10vh 10vw;
-  gap: 1.5vh;
+  gap: 2vh;
 }
 
 #slide_3 {
@@ -41,7 +41,7 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 10vh 10vw;
-  gap: 1.5vh;
+  gap: 2vh;
 }
 
 .slide_h1 {
@@ -50,7 +50,7 @@
 }
 
 .slide_p {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .slide_button {
@@ -73,7 +73,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 2vw;
+  gap: 4vw;
   position: absolute;
   bottom: 2vh;
   z-index: 1;
@@ -94,7 +94,7 @@
 
 @media screen and (max-width: 640px) {
   #slider_nav {
-    gap: 8vw;
+    gap: 10vw;
   }
 
   #slide_1 div, #slide_2 div, #slide_3 div {
@@ -102,6 +102,10 @@
   }
 
   .slide_h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
+  }
+
+  #slide_3 h1 {
+    color: var(--WHITE);
   }
 }
