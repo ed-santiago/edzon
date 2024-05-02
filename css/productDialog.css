@@ -115,6 +115,10 @@
     width: 100%;
   }
 
+  .product_info img {
+    height: 300px;
+  }
+
   .info {
     width: 100%;
   }
@@ -129,6 +133,10 @@
 
   .infoPrice {
     gap: 3vh;
+  }
+
+  .infoQuantity {
+    gap: 2vh;
   }
 
   .infoButton {
