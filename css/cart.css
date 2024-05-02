@@ -16,8 +16,12 @@
   margin-bottom: 3vh;
 }
 
+#cart_title h1 {
+  font-size: 3rem;
+}
+
 #cart_title .fa-xmark {
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -39,7 +43,7 @@
   max-height: 20vh;
   margin-bottom: 2vh;
   padding: 1vw;
-  border: 2px solid black;
+  border: 0.5px solid black;
 }
 
 .cartProductDiv figure {
@@ -94,9 +98,14 @@
   background-color: white;
 }
 
+.quantity button:focus {
+  outline: none;
+}
+
 .quantity .fa-solid {
   font-size: 1.4rem;
   cursor: pointer;
+  color: var(--PURPLE);
 }
 
 .subtotal {
@@ -128,10 +137,15 @@
   align-items: center;
 }
 
+#cart_total h1 {
+  font-size: 2rem;
+}
+
 #cart_total button {
-  background-color: rgb(180, 0, 0);
+  background-color: var(--PURPLE);
   color: var(--WHITE);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
   border: none;
   padding: 1vh;
   cursor: pointer;
