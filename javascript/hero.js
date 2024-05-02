@@ -21,7 +21,7 @@ function automateSlider() {
   })
 }
 
-/* let intervalId = setInterval(automateSlider, 5000); */
+let intervalId = setInterval(automateSlider, 5000);
 
 sliderNavArray.forEach((nav, navIndex) => {
   nav.addEventListener("click", () => {

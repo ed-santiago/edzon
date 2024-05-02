@@ -125,11 +125,11 @@ header figure img {
     padding: 2vw 5vw;
   }
 
-  #menu_bar/* , form */ {
+  #menu_bar {
     display: none;
   }
 
-  #ham_icon/* , #search_icon */ {
+  #ham_icon {
     display: block;
   }
 }
