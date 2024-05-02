@@ -80,6 +80,7 @@
   font-size: 1.8rem;
   cursor: pointer;
   transition: 0.2s;
+  color: var(--PURPLE);
 }
 
 .cardPriceCart .fa-cart-shopping:hover {
