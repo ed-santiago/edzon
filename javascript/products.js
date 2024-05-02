@@ -1,4 +1,3 @@
-const productSection = document.querySelector("#product_section");
 const productDialog = document.querySelector("#product_dialog");
 const productInfo = document.querySelector(".product_info");
 

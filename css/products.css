@@ -5,6 +5,10 @@
   gap: 3vw;
 }
 
+#product_section h2 {
+  grid-column: 1 / -1;
+}
+
 .product_card {
   padding: 1vw;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 16px 0 rgba(0, 0, 0, 0.19);

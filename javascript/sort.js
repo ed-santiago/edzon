@@ -1,5 +1,6 @@
 /* SEARCH BAR */
 
+const productSection = document.querySelector("#product_section");
 const searchForm = document.querySelector("#form_search");
 const searchBar = document.querySelector("#search_value");
 const formSort = document.querySelector("#form_sort");
@@ -12,6 +13,12 @@ searchForm.addEventListener("submit", (e) => {
       product.category.toLowerCase().startsWith(searchValue)
   })
   renderProducts(filteredProducts);
+  filterTitle.textContent = searchValue;
+  if (filteredProducts.length === 0) {
+    productSection.innerHTML = `
+      <h2>There are no results that match your search.</h2>
+    `
+  }
   searchForm.reset();
   formSort.reset();
 })
