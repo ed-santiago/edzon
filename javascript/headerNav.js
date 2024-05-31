@@ -14,6 +14,7 @@ const allNav = document.querySelectorAll(".nav_all");
 allNav.forEach(nav => {
   nav.addEventListener("click", () => {
     filterTitle.textContent = "All";
+    filteredProducts = [];
     renderProducts(productsArray);
     hamMenu.style.right = "-100vw";
   })

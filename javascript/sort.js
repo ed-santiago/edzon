@@ -30,6 +30,7 @@ formSort.addEventListener("change", (e) => {
     case "all":
       filteredProducts = [];
       renderProducts(productsArray);
+      filterTitle.textContent = "All";
       break;
     case "lowest_price":
       renderProducts(lowestPrice());
