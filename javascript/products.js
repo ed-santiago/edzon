@@ -139,7 +139,10 @@ function openProductDialog(product) {
   /* ADD TO CART */
 
   const addToCartButton = document.querySelector(".infoButton");
-  addToCartButton.addEventListener("click", () => addToCart(product, quantity));
+  addToCartButton.addEventListener("click", () => {
+    addToCart(product, quantity)
+    productDialog.close();
+  });
 }
 
 function addToCart(product, quantity) {
