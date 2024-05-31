@@ -132,12 +132,11 @@ checkOutButton.addEventListener("click", () => {
   if (cartArray.length === 0) {
     alert("Nothing to checkout.")
   } else {
-    for (let i = 1; i < (cartArray.length + 1); i++) {
-      fetch(`https://edzon-db.onrender.com/cart/${i}`, {
+    cartArray.map(product => {
+      fetch(`https://edzon-db.onrender.com/cart/${product.id}`, {
         method: "DELETE"
       })
-    }
-    cartArray.splice(0, cartArray.length);
+    })
     cartProductsSection.innerHTML = "";
     alert("Check out successful. Thank you for shopping with edzon!");
     location.reload();

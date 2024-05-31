@@ -151,6 +151,7 @@ function addToCart(product, quantity) {
   }
 
   const productData = {
+    id: product.id,
     title: product.title,
     image: product.image,
     price: product.price,
