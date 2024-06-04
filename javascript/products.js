@@ -7,10 +7,13 @@ const total = document.querySelector("#total");
 const cartProductsSection = document.querySelector("#cart_products");
 
 /* LOADER */
-const loader = `<div id="loader_container">
-  <h1>Loading products</h1>
-  <div id="loader"></div>
-</div>`
+const loader = `
+  <p id="loader_message">Please allow around 30 seconds or so for products to load as I am using the free version of Render.</p>
+  <div id="loader_container">
+    <h1>Loading products</h1>
+    <div id="loader"></div>
+  </div>
+`
 
 productSection.innerHTML = loader;
 
